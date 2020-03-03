@@ -2,7 +2,7 @@ Django==2.2.10
 djangorestframework==3.11.0
 markdown
 django-filter
-mysqlclient
+#mysqlclient
 psycopg2
 djangorestframework-simplejwt
 twitter-monitor >= 0.3.0

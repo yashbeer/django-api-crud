@@ -93,9 +93,9 @@ DATABASES = {
         'PASSWORD': '9cde1d09fbb9848b579095fc28bac42c81da1da6e12911c7f64a45f6b427b202',
         'PORT': '5432',
         
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
+        #'OPTIONS': {
+        #    'charset': 'utf8mb4',
+        #},
     }
 }
 
