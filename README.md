@@ -340,4 +340,18 @@ $.ajax({
 });
 ```
 
+# Scaling up the application
 
+First of all, deploy django app and the database on separate servers. So that we can scale the application horizontally (adding more servers when needed) and the database vertically (increasing server capacity like bigger RAM, more disk space, etc.)
+
+**Server optimization:** We can optimize nginx and uwsgi by setting configuration parameters carefully like thread count = no. of CPU cores * 2 + 1, keepalive_timeout=30s, etc.
+
+**Caching:** We can use Redix as primary cache for all user sessions and user lookups, because these operations are more read intensive. Also, we can cache Movie model (resource-level caching) for being read intensive.
+
+**Configuring Load Balancer:** We can deploy application on multiple servers behind a load balancer. Since user session is managed using Redis there shouldn't be any problem with user authentication or sticky session.
+
+**Using Elasticsearch:** We can use it for high performance movie search functionality.
+
+**Creating Master / Slave database system:** All read operations to Slave and All write operation to the Master.
+
+Conclusion: The bottlenecks at application are overcome by server optimization and load balancing, at database level by caching and master/slave architecture, search using elasticsearch. Using above techniques, we can scale this application to handle 75M hits per day.
