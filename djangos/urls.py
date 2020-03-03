@@ -22,7 +22,7 @@ urlpatterns = [
     
     url(r'^api-auth/', include('rest_framework.urls')),
     
-    url(r'^', include('twitter_stream.urls')),
+    #url(r'^', include('twitter_stream.urls')),
     
-    url(r"^api/v1/", include("twitter_stream.api.urls")),
+    #url(r"^api/v1/", include("twitter_stream.api.urls")),
 ]

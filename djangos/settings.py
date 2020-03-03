@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'bootstrap3',
     'django.contrib.humanize',
-    'twitter_stream',
+    #'twitter_stream',
 ]
 
 MIDDLEWARE = [
