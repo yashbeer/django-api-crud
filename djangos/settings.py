@@ -79,14 +79,19 @@ WSGI_APPLICATION = 'djangos.wsgi.application'
 
 DATABASES = {
     'default': {
-        #'ENGINE': 'django.db.backends.sqlite3',
-        #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fynddb',
-        'USER': 'biostar',
-        'PASSWORD': 'biostar',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        #'NAME': 'fynddb',
+        #'USER': 'biostar',
+        #'PASSWORD': 'biostar',
+        #'HOST': 'localhost',
+        #'PORT': '3306',
+        
+        'HOST': 'ec2-46-137-156-205.eu-west-1.compute.amazonaws.com',
+        'NAME': 'dbk7nl2lbhfsr5',
+        'USER': 'kdnitrmsnvktge',
+        'PASSWORD': '9cde1d09fbb9848b579095fc28bac42c81da1da6e12911c7f64a45f6b427b202',
+        'PORT': '5432',
+        
         'OPTIONS': {
             'charset': 'utf8mb4',
         },
