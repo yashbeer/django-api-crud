@@ -79,13 +79,14 @@ WSGI_APPLICATION = 'djangos.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'django.db.backends.mysql',
         #'NAME': 'fynddb',
         #'USER': 'biostar',
         #'PASSWORD': 'biostar',
         #'HOST': 'localhost',
         #'PORT': '3306',
         
+        'ENGINE': 'django.db.backends.postgresql',
         'HOST': 'ec2-46-137-156-205.eu-west-1.compute.amazonaws.com',
         'NAME': 'dbk7nl2lbhfsr5',
         'USER': 'kdnitrmsnvktge',
