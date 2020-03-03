@@ -1,2 +1,1 @@
 # fyndyashbeer
-Fynd Coding Challenge

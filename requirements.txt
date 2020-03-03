@@ -1,0 +1,10 @@
+Django==2.2.10
+djangorestframework==3.11.0
+markdown
+django-filter
+mysqlclient
+djangorestframework-simplejwt
+twitter-monitor >= 0.3.0
+swapper >= 0.1.1
+django-jsonview >= 0.2
+django-bootstrap3 >= 4.3.0
