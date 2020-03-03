@@ -22,11 +22,15 @@ Make your design decisions wisely, you will be asked questions on the implementa
 
 -----------------
 
-## Solution
+# Implementation
+
+https://fyndyashbeer.herokuapp.com/api/movies/
 
 Database Used: Postgresql
 
 Python Framework: Django Rest Framework (DRF)
+
+# API Documentation
 
 ### 1. List of Movies
 
@@ -230,5 +234,110 @@ Response:
 Access: AdminOnly (Needs Authentication)
 
 Takes no request and returns no response.
+
+
+# API Testing using ajax
+
+Visit this URL- https://fyndyashbeer.herokuapp.com/api/movies/ on chrome and press F12 to open the console.
+
+Copy paste the following ajax snippets to test the above api endpoints.
+
+### LIST
+```
+$.ajax({
+    method: 'GET',
+    url: '/api/movies/',
+    beforeSend: function(xhr){
+    },
+    success: function (res) {
+        console.log(res);
+    },
+    error: function () { // Hard failure, like network error
+        console.error('Seems network error');
+    }
+});
+```
+
+### FETCH
+```
+$.ajax({
+    method: 'GET',
+    url: '/api/movie/1/',
+    beforeSend: function(xhr){
+    },
+    success: function (res) {
+        console.log(res);
+    },
+    error: function () { // Hard failure, like network error
+        console.error('Seems network error');
+    }
+});
+```
+
+### CREATE
+```
+var data = {
+    "popularity": 83.0,
+    "director": "Victor Fleming",
+    "genre": [
+      {"name": "Adventure"},
+      {"name": "Fantasy"}
+    ],
+    "imdb_score": 8.3,
+    "name": "The Wizard of Oz"
+  }
+$.ajax({
+    method: 'POST',
+    url: '/api/movies/',
+    contentType: 'application/json',
+    data: JSON.stringify(data),
+    beforeSend: function(xhr){
+        xhr.setRequestHeader('Authorization', 'Token d3e49006bc7c28d9f38932f20c5a4af5a32ccb59');
+    },
+    success: function (res) {
+        console.log(res);
+    },
+    error: function () { // Hard failure, like network error
+        console.error('Seems network error');
+    }
+});
+```
+
+### UPDATE
+```
+$.ajax({
+    method: 'PUT',
+    url: '/api/movie/10/',
+    contentType: 'application/json',
+    data: '{"name": "King Kong Part 2","director": "Merian C. Cooper","popularity": 80.0,"imdb_score": 8.0, "genre": [{"name": "Action"},{"name": "Thriller"}] }',
+    beforeSend: function(xhr){
+        xhr.setRequestHeader('Authorization', 'Token d3e49006bc7c28d9f38932f20c5a4af5a32ccb59');
+    },
+    success: function (res) {
+        console.log(res);
+    },
+    error: function () { // Hard failure, like network error
+        console.error('Seems network error');
+    }
+});
+```
+
+### DELETE
+```
+$.ajax({
+    method: 'DELETE',
+    url: '/api/movie/3/',
+    contentType: 'application/json',
+    beforeSend: function(xhr){
+        xhr.setRequestHeader('Authorization', 'Token d3e49006bc7c28d9f38932f20c5a4af5a32ccb59');
+    },
+    success: function (res) {
+        console.log(res);
+    },
+    error: function () { // Hard failure, like network error
+        console.error('Seems network error');
+    }
+});
+```
 
 
