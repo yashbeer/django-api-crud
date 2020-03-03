@@ -3,6 +3,7 @@ djangorestframework==3.11.0
 markdown
 django-filter
 mysqlclient
+psycopg2
 djangorestframework-simplejwt
 twitter-monitor >= 0.3.0
 swapper >= 0.1.1
