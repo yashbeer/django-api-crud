@@ -1,4 +1,4 @@
-## Coding Challenge By Fynd
+## Problem Statement
 
 Create a RESTful API for movies(something similar to IMDB). For this we would like you to use:
 
